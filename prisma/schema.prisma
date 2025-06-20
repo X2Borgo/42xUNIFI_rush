@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./mydatabase.sqlite"
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  username    String   @unique
+  email       String   @unique
+  password    String?
+  googleId    String?  @map("google_id")
+  name        String?
+  picture     String?
+  role        String   @default("student")
+  loginType   String   @default("local") @map("login_type")
+  accessToken String?  @map("access_token")
+  createdAt   DateTime @default(now()) @map("created_at")
+  lastLogin   DateTime @default(now()) @map("last_login")
+  
+  // Relations
+  createdExams Exam[]
+  
+  @@map("users")
+}
+
+model Subject {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  semester    Int
+  
+  // Relations
+  exams       Exam[]
+  
+  @@map("subjects")
+}
+
+model Exam {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  creatorId   Int      @map("creator_id")
+  subjectId   Int?     @map("subject_id")
+  examDate    DateTime @map("exam_date")
+  duration    Int      @default(60)
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  // Relations
+  creator     User     @relation(fields: [creatorId], references: [id])
+  subject     Subject? @relation(fields: [subjectId], references: [id])
+  
+  @@map("exams")
+}

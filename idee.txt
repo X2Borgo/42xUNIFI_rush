@@ -1,0 +1,4 @@
+giorno con esame -> nero
+	<= 3 giorni con esame -> rosso
+	<= 5 giorni con esame -> arancione
+	else -> verde
