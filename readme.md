@@ -1,13 +1,17 @@
-#HOW TO RUN
-##eseguire i seguenti comandi
+## HOW TO RUN
+### eseguire i seguenti comandi
 > npm install
+
 > npm run host
+
 > npm run backend
 
-#DESCRIZIONE
+#
 
-# Planificazione delle date di esami alla Scuola di Ingegneria
-## un esercizio di progettazione e programmazione strutturata – EV: Giugno ‘25
+## DESCRIZIONE
+
+### Planificazione delle date di esami alla Scuola di Ingegneria
+### un esercizio di progettazione e programmazione strutturata – EV: Giugno ‘25
 
 Nell’organizzazione dell’offerta didattica della Scuola di Ingegneria, ciascun docente deve pianificare in anticipo le date degli esami nel corso dell’anno.
 
