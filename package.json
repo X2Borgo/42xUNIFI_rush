@@ -6,7 +6,10 @@
     "dev": "tsc -w",
     "host": "vite",
     "backend": "node backend/server.js",
-    "doc": "compodoc -p tsconfig.json -s"
+    "doc": "compodoc -p tsconfig.json -s",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push"
   },
   "author": "",
   "license": "ISC",
