@@ -1,3 +1,11 @@
+#HOW TO RUN
+##eseguire i seguenti comandi
+> npm install
+> npm run host
+> npm run backend
+
+#DESCRIZIONE
+
 # Planificazione delle date di esami alla Scuola di Ingegneria
 ## un esercizio di progettazione e programmazione strutturata – EV: Giugno ‘25
 
